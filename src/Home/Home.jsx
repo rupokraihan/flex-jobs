@@ -10,11 +10,11 @@ const Home = () => {
           <br /> Closer To Your <br /> <span className='text-purple-500'>Dream Job</span>
         </h1>
         <p>
-          Explore thousands of job opportunities with all the information you
-          need. Its your future. Come find it. Manage all your job application
+          Explore thousands of job opportunities with all the <br/> information you
+          need. Its your future. Come find it. Manage all  your job application
           from start to finish.
         </p>
-        <button className="my-button">Get Started</button>
+        <button className="my-button mt-8">Get Started</button>
       </div>
       <div>
         <img src={MyImage} alt="" />
