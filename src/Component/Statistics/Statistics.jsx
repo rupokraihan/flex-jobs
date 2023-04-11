@@ -56,7 +56,7 @@ export default class Example extends PureComponent {
             data={data}
             margin={{
               top: 10,
-              right: 30,
+              right: 40,
               left: 0,
               bottom: 0,
             }}
@@ -73,7 +73,9 @@ export default class Example extends PureComponent {
             />
           </AreaChart>
         </ResponsiveContainer>
-        <h1 className="text-center mt-12 text-4xl font-bold">Assignment Marks Analytics</h1>
+        <h1 className="text-center mt-12 text-4xl font-bold">
+          Assignment Marks Analytics
+        </h1>
       </div>
     );
   }
