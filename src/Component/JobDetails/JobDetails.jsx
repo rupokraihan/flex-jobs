@@ -22,7 +22,7 @@ const JobDetails = () => {
           Job Details
         </h1>
       </div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 gap-24">
         <div className="col-span-2 ">
           <p>Job Description: {job.description}</p>
           <p>Job Responsibility: {job.responsibility}</p>
@@ -37,16 +37,19 @@ const JobDetails = () => {
         </div>
 
         <div className="">
-          <h1>hello job</h1>
+          <div>
+            <h1>Job Details</h1>
 
-          <p>Salary: {job.salary} (Per Month)</p>
-          <p>Job Title : {job.title}</p>
+            <p>Salary: {job.salary} (Per Month)</p>
+            <p>Job Title : {job.title}</p>
 
-          <h3>Contact Information</h3>
+            <h3>Contact Information</h3>
 
-          <p>Phone: {job.phone}</p>
-          <p>Email: {job.email}</p>
-          <p>Address :{job.location}</p>
+            <p>Phone: {job.phone}</p>
+            <p>Email: {job.email}</p>
+            <p>Address :{job.location}</p>
+          </div>
+          <button className="my-button mt-8 ">View Details</button>
         </div>
       </div>
     </div>
