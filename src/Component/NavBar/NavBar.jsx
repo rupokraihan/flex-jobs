@@ -11,7 +11,7 @@ const NavBar = () => {
     <div className="bg-fuchsia-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
         <Link to="/" className="inline-flex items-center">
-          <h2 className="ml-2 text-3xl font-bold tracking-wide text-gray-800">
+          <h2 className="ml-2 text-3xl font-extrabold tracking-wide text-gray-800">
             flexJobs
           </h2>
         </Link>
@@ -125,8 +125,6 @@ const NavBar = () => {
                   </ul>
                 </nav>
               </div>
-              
-
             </div>
           )}
         </div>

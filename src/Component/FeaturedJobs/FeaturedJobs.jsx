@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { MapPinIcon,CurrencyDollarIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
+import { MapPinIcon, CurrencyDollarIcon } from "@heroicons/react/24/solid";
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
+  const [showAll, setShowAll] = useState(false);
+  const numJobsToShow = showAll ? jobs.length : 4;
+
   useEffect(() => {
     const loadData = async () => {
       const res = await fetch(`/featuredJobs.json`);
       const data = await res.json();
-
-      setJobs(data);;
+      setJobs(data);
     };
-
     loadData();
   }, []);
 
   return (
     <div>
       <div className="grid gap-8 lg:grid-cols-2 mt-12">
-        {jobs.map((job) => (
+        {jobs.slice(0, numJobsToShow).map((job) => (
           <div key={job.id} className=" border border-gray-200 rounded-xl">
             <div className="ml-10 mb-7">
               <img className="h-16 mt-8" src={job.logo} alt="" />
@@ -43,14 +45,23 @@ const FeaturedJobs = () => {
                   Salary: {job.salary}
                 </p>
               </div>
-              <button className="my-button mt-8 ">View Details</button>
+              <Link to={`/jobDetails/${job.id}`}>
+                <button className="my-button mt-8 ">View Details</button>
+              </Link>
             </div>
           </div>
         ))}
       </div>
-      <div className="flex justify-center">
-        <button className="my-button mt-12 ">See All Jobs</button>
-      </div>
+      {jobs.length > numJobsToShow && (
+        <div className="flex justify-center">
+          <button
+            className="my-button mt-12"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Show Less" : "See All Jobs"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
