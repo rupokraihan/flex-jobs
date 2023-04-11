@@ -1,6 +1,7 @@
 import React from "react";
-import MyImage from "../assets/P3OLGJ1 copy 1.png";
+import MyImage from "../../assets/P3OLGJ1 copy 1.png";
 import JobList from "../JobList/JobList";
+import FeaturedJobs from "../FeaturedJobs/FeaturedJobs";
 
 const Home = () => {
   return (
@@ -37,7 +38,7 @@ const Home = () => {
       </section>
 
       <section>
-        <div className="text-center mt-28">
+        <div className="text-center mt-20">
           <h2 className="text-5xl font-extrabold mb-4">Featured Jobs</h2>
           <p className="text-[#757575] ">
             Explore thousands of job opportunities with all the information you
@@ -45,6 +46,7 @@ const Home = () => {
           </p>
         </div>
       </section>
+      <FeaturedJobs/>
     </div>
   );
 };

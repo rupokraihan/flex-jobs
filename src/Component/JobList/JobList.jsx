@@ -8,7 +8,10 @@ const JobList = () => {
     <div>
       <div className="lg:flex mt-12 ">
         {jobList.map((job) => (
-          <div className="h-[240px] w-[300px]  sm:w-full sm:h-auto  rounded-lg bg-purple-100 sm:mb-6 lg:ml-4 p-10 ">
+          <div
+            key={job.id}
+            className="lg:h-[240px] lg:w-[300px]  w-full h-auto  rounded-lg bg-purple-100 mb-6 lg:ml-4 p-10 "
+          >
             <img
               className="bg-purple-200 p-2 mb-8"
               src={job.categoryLogo}
