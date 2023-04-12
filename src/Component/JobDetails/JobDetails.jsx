@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import {
   CurrencyDollarIcon,
@@ -18,10 +19,19 @@ const JobDetails = () => {
   const handleApplyJob = (job) => {
     const exist = applyJob.find((d) => d.id === job.id);
     if (exist) {
-      alert("added");
+      toast.error(
+        `you already applied this job . Go to Applied job page !!`,
+        {
+          position: toast.POSITION.TOP_RIGHT,
+        }
+      )
     } else {
       setApplyJob([...applyJob, job]);
-      addToDb(job.id)
+      addToDb(job.id);
+      toast.success("Application successfully submitted !"),
+        {
+          position: toast.POSITION.TOP_RIGHT,
+        };
     }
   };
   useEffect(() => {

@@ -20,8 +20,8 @@ const AppliedJobs = () => {
   }, [applyJob]);
 
   const handleOnset = () => {
-    const onSetJobs = jobs.filter((job) => job.workStatus === "Onsite");
-    setFilter(onSetJobs);
+    const onSiteJobs = jobs.filter((job) => job.workStatus === "Onsite");
+    setFilter(onSiteJobs);
   };
 
   const handleRemote = () => {

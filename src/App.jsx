@@ -5,12 +5,15 @@ import Home from "./Component/Home/Home";
 import Statistics from "./Component/Statistics/Statistics";
 import NavBar from "./Component/NavBar/NavBar";
 import Footer from "./Component/Footer/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <div>
       <NavBar />
       <Outlet />
+      <ToastContainer/>
       <Footer/>
     </div>
   );
