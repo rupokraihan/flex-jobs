@@ -6,7 +6,7 @@ Hosted in Netlify -> [flexJobs](https://herogadget.netlify.app/)
 - There is a navbar with a project Title , Four different links , and a Button.
 - Links help to navigate to different page
 - A good Header section. Which has a Title, a Banner image and a short paragraph.
-= A section for Job Category List. Which has available jobs number,Company logo and job category name in a box.
+- A section for Job Category List. Which has available jobs number,Company logo and job category name in a box.
 - A section for Featured Jobs. This section is very useful for people who are looking for jobs.
 - See All jobs button clicking and will load all jobs.
 - Here is with each available job View Details button where click to see job details.

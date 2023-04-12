@@ -28,10 +28,10 @@ const FeaturedJobs = () => {
                 {job.companyName}
               </p>
               <div className="flex gap-4 mt-2">
-                <p className="border border-indigo-600 px-3 py-1">
+                <p className="border border-indigo-600 rounded-md px-3 py-1">
                   {job.workStatus}
                 </p>
-                <p className="border border-indigo-600 px-3 py-1">
+                <p className="border border-indigo-600 rounded-md px-3 py-1">
                   {job.jobType}
                 </p>
               </div>
