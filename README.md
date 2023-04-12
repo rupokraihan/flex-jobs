@@ -1,5 +1,5 @@
 ## Live Link
-Hosted in Netlify -> [flexJobs](https://herogadget.netlify.app/)
+Hosted in Netlify -> [flexJobs](https://bespoke-rugelach-821403.netlify.app)
 
 ## flexJobs project Features
 
