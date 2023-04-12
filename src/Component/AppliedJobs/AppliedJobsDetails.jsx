@@ -26,7 +26,7 @@ const AppliedJobsDetails = ({ job }) => {
               </p>
             </div>
 
-            <div className="flex gap-6">
+            <div className="lg:flex gap-6">
               <p className="flex gap-2 ">
                 <MapPinIcon className="w-6 text-gray-500" />
                 {job.location}

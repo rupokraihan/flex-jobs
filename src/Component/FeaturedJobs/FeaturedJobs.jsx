@@ -35,7 +35,7 @@ const FeaturedJobs = () => {
                   {job.jobType}
                 </p>
               </div>
-              <div className="flex gap-16 mt-4">
+              <div className="lg:flex gap-16 mt-4">
                 <p className="flex font-semibold text-[#757575] gap-1">
                   <MapPinIcon className="w-6" />
                   {job.location}
