@@ -6,41 +6,49 @@ import AppliedJobsDetails from "./AppliedJobsDetails";
 const AppliedJobs = () => {
   const applyJob = useLoaderData();
   const [jobs, setJobs] = useState([]);
-  const [remoteJob, setRemoteJob] = useState(applyJob)
-  const [onSet, setOnSet] = useState(applyJob);
-  const [filter, setFilter] = useState(applyJob);
+  const [filter, setFilter] = useState([]);
 
-  const handleOnset = () => {
-    const onSetJobs = onSet.filter((onS) => onS.workStatus === "Onsite");
-    setOnSet(onSetJobs);
-    setFilter(onSetJobs);
-  }
-  const handleRemote = () => {
-    const remoteJobs = remoteJob.filter((onR) => onR.workStatus === "Remote");
-    setRemoteJob(remoteJobs);
-    setFilter(remoteJobs);
-  }
-  
   useEffect(() => {
-    const storedCart = getShoppingCart()
+    const storedCart = getShoppingCart();
     const savedCart = [];
     for (const id in storedCart) {
-      const addedJob = applyJob.find(job => job.id === id)
+      const addedJob = applyJob.find((job) => job.id === id);
       savedCart.push(addedJob);
     }
     setJobs(savedCart);
-  },[])
+    setFilter(savedCart);
+  }, [applyJob]);
 
-  
+  const handleOnset = () => {
+    const onSetJobs = jobs.filter((job) => job.workStatus === "Onsite");
+    setFilter(onSetJobs);
+  };
+
+  const handleRemote = () => {
+    const remoteJobs = jobs.filter((job) => job.workStatus === "Remote");
+    setFilter(remoteJobs);
+  };
+
   return (
     <div>
-      <div className="my-container flex gap-8 ">
-        <button onClick={handleOnset}>On set</button>
-        <button onClick={handleRemote}>Remote</button>
+      <div className="my-container justify-end flex gap-6">
+        <p className="text-xl font-bold">Filter By:</p>
+        <button
+          className="inline-flex items-center h-8 px-4 mb-3 font-medium text-white transition duration-200 rounded-lg shadow-md  md:mb-0 bg-orange-500 hover:bg-yellow-700"
+          onClick={handleOnset}
+        >
+          On Site
+        </button>
+        <button
+          className="inline-flex items-center h-8 px-4 mb-3 font-medium text-white transition duration-200 rounded-lg shadow-md  md:mb-0 bg-orange-500 hover:bg-yellow-700"
+          onClick={handleRemote}
+        >
+          Remote
+        </button>
       </div>
-      {filter
-        ? filter.map((job) => <AppliedJobsDetails key={job.id} job={job} />)
-        : jobs.map((job) => <AppliedJobsDetails key={job.id} job={job} />)}
+      {filter.map((job) => (
+        <AppliedJobsDetails key={job.id} job={job} />
+      ))}
     </div>
   );
 };
