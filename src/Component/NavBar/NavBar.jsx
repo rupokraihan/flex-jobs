@@ -108,7 +108,7 @@ const NavBar = () => {
                     </li>
                     <li>
                       <Link
-                        to="/applied-jobs"
+                        to="/appliedJobs"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                       >
                         Applied Jobs
